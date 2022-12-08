@@ -1,5 +1,6 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 const { verifyDownloadTasks } = require('cy-verify-downloads');
+//const setupNodeEvents = require('./cypress/support/index.js');
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
@@ -7,19 +8,20 @@ module.exports = defineConfig({
   reporterOptions: {
     configFile: 'reporter-config.json'
   },
-  video: true,
+  video: false,
   screenshotsFolder: 'cypress/reports/assets',
-  pageLoadTimeout: 80000,
-  defaultCommandTimeout: 10000,
+  pageLoadTimeout: 30000,
+  defaultCommandTimeout: 30000,
   responseTimeout: 60000,
   viewportWidth: 1280,
   viewportHeight: 720,
+  //setupNodeEvents,
   e2e: {
     experimentalSessionAndOrigin: true,
     baseUrl: 'https://frontend.stg.b2b-asics.com/aop#/login',
     setupNodeEvents(on, config) {
       // implement node event listeners here
-        on('task', verifyDownloadTasks)
+        on('task', verifyDownloadTasks);
       }
     },
 });

@@ -63,6 +63,23 @@ class HomePage {
       .click();
     return this;
   }
+
+  selectEmployeesListUsers(username) {
+    cy.contains('Employees').click();
+    cy.contains('List users').click();
+    cy.get('#users-search').type(username);
+    cy.contains("td", username)
+    .parent()
+    .contains("span", "Login under this account")
+    .click();
+  return this;
+  }
+
+  goToCheckPendingOrders() {
+    cy.contains('My orders').click();
+    cy.contains('Pending').click();
+  return this;
+  }
 }
 
 export default HomePage;

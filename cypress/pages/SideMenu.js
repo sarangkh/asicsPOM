@@ -5,6 +5,11 @@ class SideMenu {
     );
   }
 
+  get createSalesOrder() {
+    return cy.get(
+      'a[href*=salesOrder]'
+    );
+  }
 
 }
 export default SideMenu;
