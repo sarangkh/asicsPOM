@@ -34,7 +34,6 @@ describe("Asics Staging B2B tests", () => {
     customersPage.selectCustomer(TestData.customerData.customerName);
     homePage.sideMenu.createSalesOrder.click();
     newOrderPage.createSalesOrder();
-
     atOncePage.selectProduct(TestData.customerData.product);
     productOrderPage.styleID
       .invoke("text")
@@ -47,18 +46,14 @@ describe("Asics Staging B2B tests", () => {
         productOrderPage.addToBasket.click();
         homePage.goToCheckPendingOrders();
         myBasketPage.selectBasket($elem.text());
-        productOrderPage.product.click()
+        productOrderPage.product.click();
       }
     );
 
-   
-
-    // productOrderPage.basketIcon.click();
-
-    // basketPage.checkoutButton.click();
-
-    // checkoutPage.verifyDownload();
-    // checkoutPage.enetrPurchaseOrderNumber();
-    // checkoutPage.submitOrderButton.click();
+    productOrderPage.basketIcon.click({force:true});
+    basketPage.checkoutButton.click({force :true});
+    //checkoutPage.verifyDownload();
+    checkoutPage.enetrPurchaseOrderNumber();
+    checkoutPage.submitOrderButton.click();
   });
 });

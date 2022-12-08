@@ -30,17 +30,13 @@ describe("Asics Staging B2B tests", () => {
     cy.visit(
       "https://frontend.stg.b2b-asics.com/aop/sales#/orders/590122889/at-once"
     );
-    //cy.get('a[class*="contextmenu"]').first().click();
-
     atOncePage.selectProduct(TestData.customerData.product);
     productOrderPage.styleID.invoke("text").should("eq", TestData.customerData.styleId);
     productOrderPage.quantity.clear().type('1');
     productOrderPage.addToBasket.click();
     productOrderPage.basketIcon.click();
-
     basketPage.checkoutButton.click();
-
-    checkoutPage.verifyDownload();
+    //checkoutPage.verifyDownload();
     checkoutPage.enetrPurchaseOrderNumber();
     checkoutPage.submitOrderButton.click();
 
