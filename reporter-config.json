@@ -1,5 +1,5 @@
 {
-    "reporterEnabled": "mochawesome,spec, mocha-junit-reporter",
+    "reporterEnabled": "mochawesome, mocha-junit-reporter",
     "mochawesomeReporterOptions": {
         "reportDir": "cypress/reports/json",
         "quite": true,

@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open:aop": "cypress open --env configFile=aop",
     "test:aop": "npm run pretest && npm run scripts:aop || npm run posttest",
-    "scripts:aop": "cypress run --env configFile=aop browser edge --headed",
+    "scripts:aop": "cypress run --env configFile=aop --browser edge --headed",
     "delete:reports": "del /f /s /q cypress\\reports 1>nul",
     "make:directories": "mkdir cypress\\reports && mkdir cypress\\reports\\json && mkdir cypress\\archive",
     "pretest": "npm run delete:reports || npm run make:directories",

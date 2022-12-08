@@ -51,7 +51,8 @@ describe("Asics Staging B2B tests", () => {
     );
 
     productOrderPage.basketIcon.click({force:true});
-    basketPage.checkoutButton.click({force :true});
+    cy.wait(1000);
+    basketPage.checkoutButton.click();
     //checkoutPage.verifyDownload();
     checkoutPage.enetrPurchaseOrderNumber();
     checkoutPage.submitOrderButton.click();
