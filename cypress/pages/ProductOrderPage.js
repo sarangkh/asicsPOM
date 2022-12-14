@@ -12,7 +12,7 @@ class ProductOrderPage {
   }
 
   get basketIcon() {
-    return cy.get('div[class="flex items-center mini-basket"] div[class*="relative flex items-center"]').first();
+    return cy.get('div[class="flex items-center mini-basket"] i[class="fa fa-cart-shopping fa-lg"]').first();
   }
 
   get plusIcon() {

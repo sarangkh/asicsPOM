@@ -4,8 +4,8 @@ class AtOncePage {
   }
 
   selectProduct(ProductName) {
-    this.productSearch.type(ProductName);
-    cy.get('img[src*="1011B472_001"]').first().click();
+    this.productSearch.clear().type(ProductName);
+    cy.get('div[class="flex flex-col h-full items-center justify-start"] img[src*="1011B472_001"]').first().click();
     return this;
   }
 }

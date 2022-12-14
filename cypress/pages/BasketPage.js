@@ -1,6 +1,10 @@
 class BasketPage {
   get checkoutButton() {
-    return cy.get('div[class="flex sm:flex-col gap-4 items-center justify-center"] button[class*="flex focus:outline-none justify"]');
+    return cy.get('.flex-col.h-full > .gap-4 > .flex');
+  }
+
+  get continueCheckout() {
+    return cy.get('.divide-grey > .hidden > .flex > .capitalize');
   }
 
 }

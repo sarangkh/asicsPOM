@@ -15,7 +15,11 @@ class CheckoutPage {
     return cy.contains("Submit order");
   }
 
-  enetrPurchaseOrderNumber() {
+  get status() {
+    return  cy.get('.definition-list > :nth-child(14)');
+  }
+
+  enterPurchaseOrderNumber() {
     this.purchaseOrderNumber.type(
       TestData.customerData.AccountName + Math.floor(Math.random() * 10)
     );

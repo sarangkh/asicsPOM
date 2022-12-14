@@ -1,8 +1,4 @@
 //Pages
-// Cypress.on('uncaught:exception', (err, runnable) => {
-//   return false;
-// });
-
 import HomePage from "../pages/HomePage";
 import CustomersPage from "../pages/CustomersPage";
 import AtOncePage from "../pages/AtOncePage";
@@ -46,15 +42,16 @@ describe("Asics Staging B2B tests", () => {
         productOrderPage.addToBasket.click();
         homePage.goToCheckPendingOrders();
         myBasketPage.selectBasket($elem.text());
-        productOrderPage.product.click();
+        atOncePage.selectProduct(TestData.customerData.product);
       }
     );
 
-    productOrderPage.basketIcon.click({force:true});
-    cy.wait(1000);
+    productOrderPage.basketIcon.click();
+    cy.wait(3000);
     basketPage.checkoutButton.click();
-    //checkoutPage.verifyDownload();
-    checkoutPage.enetrPurchaseOrderNumber();
+    basketPage.continueCheckout.click();
+    checkoutPage.enterPurchaseOrderNumber();
     checkoutPage.submitOrderButton.click();
+    checkoutPage.status.invoke("text").should("contain", "Sent");
   });
 });
