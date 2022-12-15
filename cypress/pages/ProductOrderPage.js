@@ -23,6 +23,14 @@ class ProductOrderPage {
     return cy.get('a[href*="1011B472"]').first();
   }
 
+  get basketVerticalFlex() {
+    return cy.get('button[type="button"] i[class="fa fa-ellipsis-vertical fa-xl"]').first();
+  }
+
+  get createNewBasket() {
+    return cy.get('i[class="fa fa-plus"]');
+  }
+
   selectProduct(quantity){
     this.plusIcon.click();
     this.quantity.clear().type(quantity);

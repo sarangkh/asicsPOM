@@ -1,10 +1,10 @@
 export const Users = {
     signInUser: {
         "username": "shailja.shah",
-        "password": "Welcome@RaginiHaresh1"
+        "password": "V2VsY29tZUBSYWdpbmlIYXJlc2gx"
     },
     loginUser: {
         "username": "admin_shailja",
-        "password": "tyfDEHRNQEBp"
+        "password": "dHlmREVIUk5RRUJw"
     },
 }

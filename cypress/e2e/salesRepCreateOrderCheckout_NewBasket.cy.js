@@ -5,6 +5,7 @@ import AtOncePage from "../pages/AtOncePage";
 import ProductOrderPage from "../pages/ProductOrderPage";
 import BasketPage from "../pages/BasketPage";
 import CheckoutPage from "../pages/CheckoutPage";
+import NewOrderPage from "../pages/NewOrderPage";
 
 //Test Data
 import { Users } from "../fixtures/Users";
@@ -17,10 +18,11 @@ describe("Asics Staging B2B tests", () => {
   const productOrderPage = new ProductOrderPage();
   const basketPage = new BasketPage();
   const checkoutPage = new CheckoutPage();
+  const newOrderPage = new NewOrderPage();
 
   it("First test", () => {
     homePage.visit();
-    homePage.signIn(Users.signInUser.username, Users.signInUser.password);
+    homePage.signIn(Users.signInUser.username,Users.signInUser.password);
     homePage.login(Users.loginUser.username, Users.loginUser.password);
     customersPage.selectCustomer(TestData.customerData.customerName);
     homePage.loginUnderThisAccount(TestData.customerData.AccountName);
@@ -33,9 +35,16 @@ describe("Asics Staging B2B tests", () => {
     productOrderPage.styleID
       .invoke("text")
       .should("eq", TestData.customerData.styleId);
+    productOrderPage.basketIcon.click();
+    productOrderPage.basketVerticalFlex.click();
+    productOrderPage.createNewBasket.click();
+    newOrderPage.createSalesOrder();
+    atOncePage.selectProduct(TestData.customerData.product);
+    productOrderPage.styleID
+      .invoke("text")
+      .should("eq", TestData.customerData.styleId);
     productOrderPage.quantity.clear().type("1");
-    productOrderPage.addToBasket.click({force:true});
-    cy.wait(3000);
+    productOrderPage.addToBasket.click();
     productOrderPage.basketIcon.click();
     cy.wait(3000);
     basketPage.checkoutButton.click();

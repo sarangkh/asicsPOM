@@ -19,9 +19,13 @@ class CheckoutPage {
     return  cy.get('.definition-list > :nth-child(14)');
   }
 
+  get orderStatus() {
+    return  cy.get('.definition-list > :nth-child(10)');
+  }
+
   enterPurchaseOrderNumber() {
     this.purchaseOrderNumber.type(
-      TestData.customerData.AccountName + Math.floor(Math.random() * 10)
+      TestData.customerData.AccountName + Math.floor(Math.random() * 100)
     );
   }
 

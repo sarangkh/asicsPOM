@@ -44,14 +44,14 @@ class HomePage {
 
   signIn(signInUser, signInPassword) {
     this.signInFormUserName.type(signInUser, { force: true });
-    this.signInFormPassword.type(signInPassword, { force: true });
+    this.signInFormPassword.type(atob(signInPassword), { force: true });
     this.signInButton.click({ force: true });
     this.acceptCookiesButton.click({ force: true });
   }
 
   login(loginUser, loginPassword) {
     this.loginUserName.type(loginUser);
-    this.loginPassword.type(loginPassword);
+    this.loginPassword.type(atob(loginPassword));
     this.loginButton.click();
   }
 
