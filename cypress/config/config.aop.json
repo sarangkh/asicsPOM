@@ -1,9 +1,3 @@
 {
-    "baseUrl": "https://frontend.stg.b2b-asics.com/aop#/login",
-    "env": {
-        "admin_username": "sohtessiturateam@gmail.com",
-        "admin_password": "Password@1",
-        "username": "admin_shailja",
-        "password": "tyfDEHRNQEBp"
-    }
+    "baseUrl": "https://frontend.stg.b2b-asics.com/aop#/login"
    }

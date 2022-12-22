@@ -37,9 +37,3 @@ Cypress.Commands.add('waitUntilPresent', (selector, options) => {
         return myInput.length > 0;
     }), options)
  })
-
- Cypress.Commands.add('forceVisit', url => {
-    cy.window().then(win => {
-        return win.open(url, '_self'); 
-      });
-});
